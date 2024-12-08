@@ -42,7 +42,7 @@ const AqiMap: React.FC = () => {
   const zoom = 10; // Define the zoom level here
 
   return (
-    <MapContainer style={{ height: '500px', width: '100%' }}>
+    <MapContainer style={{ height: '400px', width: '100%' }}>
       <SetView center={center} zoom={zoom} />
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

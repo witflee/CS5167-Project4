@@ -17,7 +17,8 @@ const AqiCard: React.FC<AqiCardProps> = ({ title }) => {
         if (value <= 150) return 'Unhealthy for Sensitive Groups';
         if (value <= 200) return 'Unhealthy';
         if (value <= 300) return 'Very Unhealthy';
-        return 'Hazardous';
+        if (value >= 301) return 'Hazardous';
+        return 'NO DATA';
     };
 
     const getAqiDescription = (value: number) => {
@@ -26,7 +27,8 @@ const AqiCard: React.FC<AqiCardProps> = ({ title }) => {
         if (value <= 150) return 'Members of sensitive groups may experience health effects. The general public is less likely to be affected.';
         if (value <= 200) return 'Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.';
         if (value <= 300) return 'Health alert: The risk of health effects is increased for everyone.';
-        return 'Health warning of emergency conditions: everyone is more likely to be affected.';
+        if (value >= 301) return 'Health warning of emergency conditions: everyone is more likely to be affected.';
+        return 'There is no data available for this location.';
     };
     
     const getAqiColor = (value: number) => {
@@ -35,7 +37,8 @@ const AqiCard: React.FC<AqiCardProps> = ({ title }) => {
         if (value <= 150) return 'orange';
         if (value <= 200) return 'red';
         if (value <= 300) return 'purple';
-        return 'maroon';
+        if (value >= 301) return 'maroon';
+        return 'gray';
     };
 
     const getBgColor = (value: number) => {
@@ -44,7 +47,8 @@ const AqiCard: React.FC<AqiCardProps> = ({ title }) => {
         if (value <= 150) return 'sandybrown';
         if (value <= 200) return 'coral';
         if (value <= 300) return 'violet';
-        return 'indianred';
+        if (value >= 301) return 'indianred';
+        return 'lightgray';
     };
 
     if (loading) {
@@ -68,7 +72,7 @@ const AqiCard: React.FC<AqiCardProps> = ({ title }) => {
     return (
         <div className="aqi-card" style={{ borderColor: aqiColor, backgroundColor: aqiBgColor}}>
             <h2 className="aqi-card-title">{title}</h2>
-            <h1 className="aqi-card-content">{aqiStatus} ({aqiData.aqi})</h1>
+            <h1 className="aqi-card-content">{aqiStatus} {aqiData.aqi ? "("+aqiData.aqi+")" : ""}</h1>
             <p>{aqiDescription}</p>
         </div>
     );
