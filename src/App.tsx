@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import InfoCard from './components/InfoCard';
 import AqiCard from './components/AqiCard';
 import AqiMap from './components/AqiMap';
