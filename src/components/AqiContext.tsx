@@ -18,6 +18,7 @@ interface AqiContextProps {
 
 const AqiContext = createContext<AqiContextProps | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAqi = () => {
   const context = useContext(AqiContext);
   if (context === undefined) {
