@@ -3,6 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .logo {
@@ -18,25 +21,54 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
   padding: 2em;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.info-column {
+  flex: 1;
+  max-width: 33.33%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.map-column {
+  flex: 2;
+  max-width: 66.67%;
+  padding: 16px;
+  box-sizing: border-box;
+  margin: 16px
+}
+
+.aqi, .alerts, .map, .table {
+  margin-bottom: 16px;
+}
+
+.aqi-card, .info-card {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.aqi-card-title, .info-card-title {
+  margin: 0 0 8px;
+  font-size: 1.5em;
+}
+
+.aqi-card-content, .info-card-content {
+  margin: 0;
+  font-size: 1em;
+  color: #555;
 }

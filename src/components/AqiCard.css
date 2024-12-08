@@ -1,0 +1,19 @@
+.aqi-card {
+    border: 2px solid;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 16px;
+}
+  
+.aqi-card-title {
+    margin: 0 0 8px;
+    font-size: 1.5em;
+}
+  
+.aqi-card-content {
+    margin: 0;
+    font-size: 2em;
+    color: #555;
+}
