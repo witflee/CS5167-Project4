@@ -2,9 +2,20 @@
 // token = 25c9b3cc3d60a300bef5fea354bb3e855c279782
 
 import React, { useEffect, useState } from 'react';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import { useAqi } from './AqiContext';
 import 'leaflet/dist/leaflet.css';
+
+// Helper to dynamically set the map view
+const SetView = ({ center, zoom }: { center: [number, number]; zoom: number }) => {
+    const map = useMap();
+    useEffect(() => {
+      if (center) {
+        map.setView(center, zoom);
+      }
+    }, [map, center, zoom]);
+    return null;
+  };
 
 const AqiMap: React.FC = () => {
   const { aqiData, loading, error } = useAqi();
@@ -28,8 +39,11 @@ const AqiMap: React.FC = () => {
     return <div>No data available</div>;
   }
 
+  const zoom = 10; // Define the zoom level here
+
   return (
-    <MapContainer center={center} zoom={10} style={{ height: '500px', width: '100%' }}>
+    <MapContainer style={{ height: '500px', width: '100%' }}>
+      <SetView center={center} zoom={zoom} />
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         //attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
