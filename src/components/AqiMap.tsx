@@ -32,11 +32,11 @@ const AqiMap: React.FC = () => {
     <MapContainer center={center} zoom={10} style={{ height: '500px', width: '100%' }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        //attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       <TileLayer
         url="https://tiles.aqicn.org/tiles/usepa-aqi/{z}/{x}/{y}.png?token=25c9b3cc3d60a300bef5fea354bb3e855c279782"
-        attribution='&copy; <a href="https://waqi.info/">AQICN</a>'
+        //attribution='&copy; <a href="https://waqi.info/">AQICN</a>'
       />
     </MapContainer>
   );

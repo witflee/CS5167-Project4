@@ -26,7 +26,12 @@ export const useAqi = () => {
   return context;
 };
 
-export const AqiProvider: React.FC<{ location: string }> = ({ location, children }) => {
+interface AqiProviderProps {
+  location: string;
+  children: React.ReactNode;
+}
+
+export const AqiProvider: React.FC<AqiProviderProps> = ({ location, children }) => {
   const [aqiData, setAqiData] = useState<AqiData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -39,6 +44,7 @@ export const AqiProvider: React.FC<{ location: string }> = ({ location, children
         );
         setAqiData(response.data.data);
         setLoading(false);
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (err) {
         setError('Failed to fetch AQI data');
         setLoading(false);
