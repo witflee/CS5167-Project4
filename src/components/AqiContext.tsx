@@ -5,7 +5,7 @@ interface AqiData {
   aqi: number;
   city: {
     name: string;
-    geo: [number, number]; // Add geo coordinates
+    geo: [number, number];
   };
   dominentpol: string;
 }

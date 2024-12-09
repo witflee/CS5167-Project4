@@ -28,7 +28,7 @@ const AqiMap: React.FC = () => {
   }, [aqiData]);
 
   if (loading) {
-    return <div>Loading map...</div>;
+    return <div style={{ height: '400px', width: '100%', background: '#f2efe9' }}>Loading map...</div>;
   }
 
   if (error) {
@@ -39,7 +39,7 @@ const AqiMap: React.FC = () => {
     return <div>No data available</div>;
   }
 
-  const zoom = 10; // Define the zoom level here
+  const zoom = 10;
 
   return (
     <MapContainer style={{ height: '400px', width: '100%' }}>

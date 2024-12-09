@@ -52,7 +52,13 @@ const AqiCard: React.FC<AqiCardProps> = ({ title }) => {
     };
 
     if (loading) {
-        return <div>Loading...</div>;
+        return (
+            <div className="aqi-card" style={{ borderColor: "gray", backgroundColor: "lightgray"}}>
+                <h2 className="aqi-card-title">{title}</h2>
+                <h1 className="aqi-card-content">Loading...</h1>
+                <p></p>
+            </div>
+        );
     }
     
     if (error) {

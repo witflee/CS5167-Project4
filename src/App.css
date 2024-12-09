@@ -7,29 +7,12 @@
   width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
 .card {
   border: 2px solid #ccc;
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
-}
-
-.read-the-docs {
-  color: #888;
 }
 
 .app-container {
@@ -41,14 +24,12 @@
 .info-column {
   flex: 1;
   max-width: 33.33%;
-  padding: 16px;
   box-sizing: border-box;
 }
 
 .map-column {
   flex: 2;
   max-width: 66.67%;
-  padding: 16px;
   box-sizing: border-box;
   margin: 16px
 }
