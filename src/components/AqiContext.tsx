@@ -45,10 +45,10 @@ export const AqiProvider: React.FC<AqiProviderProps> = ({ location, children }) 
         );
         setAqiData(response.data.data);
         setLoading(false);
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (err) {
         setError('Failed to fetch AQI data');
         setLoading(false);
+        console.error(err);
       }
     };
 
